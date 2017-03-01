@@ -1,0 +1,102 @@
+.THIS .container {
+    border-radius:5px;
+    margin: 15px;
+    padding: 10px;
+    border: 0;
+    background-color:#fff;
+    min-height:520px;
+}
+
+.THIS .appName {
+    background-color:#fff;
+    color:#000;
+    width:100%;
+    height:50px;
+    border-radius:5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.THIS .appName-body {
+    max-width: 38rem;
+    margin: 0 auto;
+}
+
+.THIS .appName-body h3{
+    padding: 14px;
+    color: #3c3d3e;
+    font-size: 1rem;
+    font-family: 'ProximaNovaSoft-Regular','Arial';
+    border-bottom: 1px solid #f5f6f7;
+	margin: 0;
+}
+
+.THIS .text {
+    width:40%;
+    float: left;
+    color: #54698d;
+    font-weight: 100;
+    font-smoothing: antialiased;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+}
+
+.THIS .data {
+    width:60%;
+    float: left;
+    font-size: 14px;
+    text-align: right;
+}
+
+.THIS .innerWrap {
+    border-bottom: 1px solid #e0e1e2;
+    width:100%;
+    padding: 18px;
+    margin: 0;
+    clear: both;
+    background: white;
+    overflow: hidden;
+}
+
+/*.THIS .position {
+    height: 90px;
+}*/
+
+.THIS .appWrap {
+    margin-top: 14px;
+    margin-left: 24px;
+    overflow: hidden;
+    border: 1px solid #e0e1e2;
+    border-radius: 5px;
+    background: #FFFFFF;
+    width: 90%; 
+    overflow: hidden;
+}
+
+.THIS .title {
+    background: #16325c !important;
+    color: #ffffff;
+    font-size: 18px !important;
+    font-weight: 100 !important;
+    font-smoothing: antialiased;
+    height: 60px;
+    border-bottom: 3px solid #e0e1e2;
+}
+
+.THIS .button {
+    overflow: hidden;
+    margin: 14px auto;
+    text-align: center;
+    /*margin-left: 24px;*/
+}
+
+.THIS .box {
+    border: none;
+}
+
+.THIS .message {
+    font-weight: 100;
+    font-smoothing: antialiased;
+    text-align: center;
+}

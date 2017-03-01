@@ -1,0 +1,20 @@
+<aura:component controller="CandidateController" access="global" implements="force:appHostable,flexipage:availableForAllPageTypes">
+    
+
+    <ltng:require styles="/resource/slick_css,/resource/slick_theme"	
+                  scripts="/resource/jquery_min,/resource/slick_min"
+        afterScriptsLoaded="{!c.doInit}"/>
+    
+	<aura:attribute name="contacts" type="Contact[]" />
+    <aura:attribute name="title" type="String" default="Candidates" />
+    <aura:registerEvent name="setContact" type="c:setApplication" />
+    <div class="container">
+        <h1 class="title">{!v.title}</h1>
+        <div class="carousel">
+    		<aura:iteration items="{!v.contacts}" var="contact">
+                <c:CandidatePage contact="{!contact}" />
+            </aura:iteration>
+    	</div>
+    </div>
+    
+</aura:component>

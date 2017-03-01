@@ -1,0 +1,66 @@
+<aura:component controller="applicantReviewCtrl" implements="flexipage:availableForAllPageTypes">
+    <aura:handler name="init" value="{!this}" action="{!c.setReviews}" />
+    <aura:attribute name="reviews" type="Review__c[]" />
+    <aura:attribute name="eventId" type="Id"  />
+    <aura:attribute name="reviewsExist" type="Boolean"/>
+	<aura:handler event="c:setApplication" action="{!c.setReviews}" />
+
+<!-- the screen markup is here --> 
+    
+    
+	<div class="container">
+        <aura:if isTrue="{!v.reviewsExist}">
+            <aura:set attribute="body">
+                <span class="pageStyle">
+                    <aura:iteration items="{!v.reviews}" var="reviews" indexVar="position">
+                        <div class="appWrap">
+                            <div class="innerWrap title">
+                                <div class="title">Review</div>
+                            </div>                            
+                            <div class="innerWrap">
+                                <div class="text">Review Number:</div>
+                                <div class="data">
+                                    <a data-index="{!position}" onclick="{!c.navigateToReview}">
+                                        {!reviews.Name}
+                                    </a>
+                                    </div>
+                            </div>
+                            <div class="innerWrap">
+                                <div class="text">Candidate:</div>
+                                <div class="data">{!reviews.Candidate_Name__c}</div>
+                            </div>
+                            <div class="innerWrap overall">
+                                <div class="text">Job Application:</div>
+                                <div class="data">{!reviews.Job_Application__r.Name}</div>
+                            </div>
+                            <div class="innerWrap overall">
+                                <div class="text">Overall Assessment:</div>
+                                <div class="data">{!reviews.Overall_Assessment__c}</div>
+                            </div>
+                            <div class="innerWrap">
+                                <div class="text">Rating:</div>
+                                <div class="data">{!reviews.Rating__c}</div>
+                            </div>
+                        </div>
+                    </aura:iteration>
+                </span>
+            </aura:set>
+    		<aura:set attribute="else">
+                <div class="appWrap">
+                    <div class="innerWrap title">
+                        <div class="title">Review</div>
+                    </div>
+                    <div class="innerWrap box">
+                        <div class="message">No Related Reviews</div>
+                    </div>
+                    <div class="innerWrap">
+                    	<div class="button">
+                			<ui:button label="Create Review" press="{!c.createReview}" />
+                        </div>
+                    </div>
+                    
+                </div>
+        	</aura:set>
+    	</aura:if>
+    </div> 
+</aura:component>

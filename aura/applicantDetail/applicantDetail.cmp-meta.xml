@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuraDefinitionBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>36.0</apiVersion>
+    <description>This component will show a default list of applicants until the candidate button is clicked in the candidate carousel, then this will set the event in this component.</description>
+</AuraDefinitionBundle>

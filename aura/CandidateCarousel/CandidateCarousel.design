@@ -1,0 +1,4 @@
+<design:component label="Applicants">
+    <design:attribute name="title" label="Component Title" description="Name the component on your application" />
+	
+</design:component>

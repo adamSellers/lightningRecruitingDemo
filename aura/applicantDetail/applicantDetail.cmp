@@ -1,0 +1,63 @@
+<aura:component controller="applicationController" implements="flexipage:availableForAllPageTypes">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="appListings" type="Job_Application__c[]" />
+    <aura:attribute name="applicationsExist" type="Boolean" />
+    <aura:attribute name="eventId" type="Id"/>
+    <aura:handler event="c:setApplication" action="{!c.setAppContact}" />
+    <!-- the screen markup is here --> 
+    <div class="container">
+        <aura:if isTrue="{!v.applicationsExist}" >
+        <span>
+            <aura:iteration items="{!v.appListings}" var="apps" indexVar="position">
+                <div class="appWrap">
+                    <div class="innerWrap title">
+                        <div class="title">Application</div>
+                    </div>  
+                    <div class="innerWrap">
+                        <div class="text">Application Name:</div>
+                        <div class="data">
+                            <a data-index="{!position}" onclick="{!c.navigateToApplication}" >
+                               {!apps.Name}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="innerWrap">
+                        <div class="text">Candidate:</div>
+                        <div class="data">{!apps.Candidate_Contact__r.FirstName}&nbsp;{!apps.Candidate_Contact__r.LastName} </div>
+                    </div>
+                    <div class="innerWrap position">
+                        <div class="text">Position:</div>
+                        <div class="data">{!apps.Position__r.Name}</div>
+                    </div>
+                    <div class="innerWrap">
+                        <div class="text">Status:</div>
+                        <div class="data">{!apps.Picklist__c}</div>
+                    </div>
+                    <div class="innerWrap">
+                        <div class="text"># Reviews:</div>
+                        <div class="data">{!apps.Number_of_Reviews__c}</div>
+                    </div>
+                </div>
+            </aura:iteration>
+    	</span>
+            <aura:set attribute="else">
+            	<div class="appWrap">
+                    <div class="innerWrap title">
+                        <div class="title">Application</div>
+                    </div>
+                    <div class="innerWrap box">
+                        <div class="message">No Related Applications</div>
+                    </div>
+                    <div class="innerWrap">
+                    	<div class="button">
+                            <ui:button label="Create Application" press="{!c.createApplication}" />
+                        </div>
+                    </div>
+                    
+                </div>
+            </aura:set>       
+        </aura:if>
+    </div>
+   
+	
+</aura:component>

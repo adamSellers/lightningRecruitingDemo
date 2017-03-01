@@ -1,0 +1,14 @@
+<aura:component access="global" >
+
+   	<aura:attribute name="contact" type="Contact"/>
+    
+    <div style="{!'background-image:url(' + v.contact.Headshot_Url__c + ')'}" id="{!v.contact.Id}">
+        <div class="description">
+            <h1><a onclick="{!c.contactSelected}">{!v.contact.FirstName}&nbsp;{!v.contact.LastName}</a></h1>
+            <div>{!v.contact.MailingCity}, {!v.contact.MobilePhone}</div>
+            <!--<div>Current Position: Account Executive</div>
+            <div>Source: Employee referral</div>-->
+        </div>
+    </div>
+    
+</aura:component>
